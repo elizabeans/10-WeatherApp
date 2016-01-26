@@ -1,0 +1,40 @@
+﻿<Window x:Class="WeatherApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="319" Width="794">
+    <Grid>
+        <TextBox x:Name="searchBox" HorizontalAlignment="Left" Margin="10,5,0,0" TextWrapping="Wrap" Text="Enter Zip Code" VerticalAlignment="Top" Height="23" Width="655"/>
+        <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="670,5,0,0" VerticalAlignment="Top" Height="23" Width="106" Click="searchButton_Click"/>
+        <Image x:Name="imageIcon" HorizontalAlignment="Left" Height="100" Margin="10,38,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="locationLabel" Content="Location here" HorizontalAlignment="Left" Margin="115,33,0,0" VerticalAlignment="Top" Width="334"/>
+        <Label x:Name="elevationLabel" Content="Elevation:" HorizontalAlignment="Left" Margin="454,33,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="elevation" Content="EL here" HorizontalAlignment="Left" Margin="575,33,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="latLongLabel" Content="Latitude / Longitude:" HorizontalAlignment="Left" Margin="115,64,0,0" VerticalAlignment="Top" Width="132"/>
+        <Label x:Name="latLong" Content="LL here" HorizontalAlignment="Left" Margin="252,64,0,0" VerticalAlignment="Top" Width="197"/>
+        <Label x:Name="updateLabel" Content="Last updated on:" HorizontalAlignment="Left" Margin="454,59,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="update" Content="update here" HorizontalAlignment="Left" Margin="575,59,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="weather" Content="Weather here" HorizontalAlignment="Left" Margin="115,90,0,0" VerticalAlignment="Top" Width="334"/>
+        <Label x:Name="temperatureLabel" Content="Temperature:" HorizontalAlignment="Left" Margin="10,143,0,0" VerticalAlignment="Top" Width="117"/>
+        <Label x:Name="temperature" Content="temp  here" HorizontalAlignment="Left" Margin="132,143,0,0" VerticalAlignment="Top" Width="317"/>
+        <Label x:Name="humidityLabel" Content="Humidity" HorizontalAlignment="Left" Margin="454,143,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="humidity" Content="humidity here" HorizontalAlignment="Left" Margin="575,143,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="feelsLikeLabel" Content="Feels Like" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="117"/>
+        <Label x:Name="feelsLike" Content="feels like here" HorizontalAlignment="Left" Margin="132,174,0,0" VerticalAlignment="Top" Width="317"/>
+        <Label x:Name="visibilityLabel" Content="Visibility:" HorizontalAlignment="Left" Margin="454,174,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="visibility" Content="visibility here" HorizontalAlignment="Left" Margin="575,174,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="windLabel" Content="Wind:" HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top" Width="117"/>
+        <Label x:Name="wind" Content="wind here" HorizontalAlignment="Left" Margin="132,205,0,0" VerticalAlignment="Top" Width="317"/>
+        <Label x:Name="uvLabel" Content="UV:" HorizontalAlignment="Left" Margin="454,205,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="uv" Content="uv here" HorizontalAlignment="Left" Margin="575,205,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="windDirectionlabel" Content="Wind Direction:" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top" Width="117"/>
+        <Label x:Name="windDirection" Content="wind direction here" HorizontalAlignment="Left" Margin="132,236,0,0" VerticalAlignment="Top" Width="317"/>
+        <Label x:Name="precipitationLabel" Content="Precipitation:" HorizontalAlignment="Left" Margin="454,236,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="precipitation" Content="precitation here" HorizontalAlignment="Left" Margin="575,236,0,0" VerticalAlignment="Top" Width="201"/>
+
+
+    </Grid>
+</Window>
