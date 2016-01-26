@@ -31,37 +31,43 @@ namespace WeatherApp
 
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
-            var result = WeatherService.GetWeatherFor(searchBox.Text);
-
-            weather.Content = result.weather;
-            elevation.Content = result.elevation;
-            latLong.Content = result.latitude + " / " + result.longitude;
-            update.Content = result.observation_time;
-            humidity.Content = result.relative_humidity;
-            feelsLike.Content = result.feelslike_string;
-            visibility.Content = result.visibility_mi;
-            wind.Content = result.wind_string;
-            windDirection.Content = result.wind_dir;
-            uv.Content = result.uv;
-            precipitation.Content = result.precip_today_in;
-            temperature.Content = result.temp_f + "F ( " + result.temp_c + "C )";
-            locationLabel.Content = result.display_location;
-
-            if (!File.Exists(result.icon))
+            try
             {
-                using (var webClient = new WebClient())
+                var result = WeatherService.GetWeatherFor(searchBox.Text);
+
+                weather.Content = result.weather;
+                elevation.Content = result.elevation;
+                latLong.Content = result.latitude + " / " + result.longitude;
+                update.Content = result.observation_time;
+                humidity.Content = result.relative_humidity;
+                feelsLike.Content = result.feelslike_string;
+                visibility.Content = result.visibility_mi;
+                wind.Content = result.wind_string;
+                windDirection.Content = result.wind_dir;
+                uv.Content = result.uv;
+                precipitation.Content = result.precip_today_in;
+                temperature.Content = result.temp_f + "F ( " + result.temp_c + "C )";
+                locationLabel.Content = result.display_location;
+
+                string fileUrl = $"{Environment.CurrentDirectory}/{result.icon}.gif";
+
+                if (!File.Exists(result.icon))
                 {
-                    byte[] bytes = webClient.DownloadData(result.icon_url);
+                    using (var webClient = new WebClient())
+                    {
+                        byte[] bytes = webClient.DownloadData(result.icon_url);
 
-                    File.WriteAllBytes(result.icon + ".gif", bytes);
+                        File.WriteAllBytes(result.icon + ".gif", bytes);
+                    }
                 }
-            }
 
-            BitmapImage src = new BitmapImage();
-            src.BeginInit();
-            src.UriSource = new Uri(result.icon + ".gif", UriKind.Relative);
-            src.EndInit();
-            imageIcon.Source = src;
+                BitmapImage src = new BitmapImage(new Uri(fileUrl));
+                imageIcon.Source = src;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Please enter a valid zip code.");
+            }
         }
     }
 }

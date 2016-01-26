@@ -44,6 +44,8 @@ namespace WeatherApp.Core
 
                 return result;
             }
+
+
         }
     }
 }
